@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama’s Kitchen</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <header class="bg-dark text-white py-2" style="font-size: 0.9rem;">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <span>Email: mdrakibhassan.official@gmail.com</span>
+            <span class="ms-3">Phone: +880 1974-526915</span>
+        </div>
+        <div>
+            <a href="reservation.html" class="text-white text-decoration-none me-3">Reservation</a>
+            <a href="signup.html" class="text-white text-decoration-none">Singup</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" style="top: 0; z-index: 1020;">
+    <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center" href="index.html" style="position: relative; height: 50px; margin-top: 0; margin-bottom: 0;">
+            <img src="logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain; position: absolute; top: 50%; transform: translateY(-50%); z-index: 1025;">
+            <span class="fw-bold" style="margin-left: 85px; line-height: 1; color: #1a1a1a;">Mama’s Kitchen</span>
+        </a>
+        
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-login-custom" href="login.html">Login</a>
+        </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="py-4 py-md-5" style="background-color: #fafafa; font-family: 'Poppins', sans-serif; min-height: 100vh;">
+    <div class="container-fluid px-3 px-md-5">
+        
+        <div class="row align-items-center mb-4 mb-md-5 pb-3 pb-4 border-bottom" style="border-color: #eaeaea !important;">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <span class="text-uppercase tracking-wider text-muted fw-bold d-block mb-1" style="font-size: 0.75rem; letter-spacing: 0.15em;">Mama's Kitchen Global Inventory</span>
+                <h2 class="fw-bold text-dark mb-0" style="letter-spacing: -0.03em;">The Complete Culinary Index</h2>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="input-group ms-auto shadow-sm rounded-3 overflow-hidden" style="max-width: 450px; border: 1px solid #eaeaea;">
+                    <span class="input-group-text bg-white border-0 text-muted ps-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </span>
+                    <input type="text" id="menuLiveSearchQuery" class="form-control bg-white border-0 py-2.5 shadow-none" placeholder="Search dish names, descriptions, or tags..." style="font-size: 0.88rem; color: #111827;">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-lg-none mb-4 overflow-hidden">
+            <span class="text-uppercase tracking-wider text-muted fw-bold d-block mb-2" style="font-size: 0.7rem; letter-spacing: 0.08em;">Food Categories</span>
+            <div class="d-flex overflow-auto pb-2 gap-2 mobile-category-scroll-engine" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <style>.mobile-category-scroll-engine::-webkit-scrollbar { display: none; }</style>
+                <button class="btn btn-sm rounded-pill px-3 py-2 text-nowrap mobile-scroll-pill active" onclick="executeCategoryFilter('all', this)">All Masterpieces</button>
+                <button class="btn btn-sm rounded-pill px-3 py-2 text-nowrap mobile-scroll-pill text-secondary bg-white border" onclick="executeCategoryFilter('starters', this)">Starters</button>
+                <button class="btn btn-sm rounded-pill px-3 py-2 text-nowrap mobile-scroll-pill text-secondary bg-white border" onclick="executeCategoryFilter('mains', this)">Main Course</button>
+                <button class="btn btn-sm rounded-pill px-3 py-2 text-nowrap mobile-scroll-pill text-secondary bg-white border" onclick="executeCategoryFilter('desserts', this)">Desserts</button>
+                <button class="btn btn-sm rounded-pill px-3 py-2 text-nowrap mobile-scroll-pill text-secondary bg-white border" onclick="executeCategoryFilter('drinks', this)">Artisanal Refreshments</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <aside class="col-xl-3 col-lg-4 d-none d-lg-block">
+                <div class="bg-white p-4 rounded-4 border sticky-top shadow-sm" style="top: 24px; border-color: #eaeaea !important; z-index: 10;">
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-dark text-uppercase mb-3" style="font-size: 0.78rem; letter-spacing: 0.08em; color: #6b7280 !important;">Food Categories</h6>
+                        <div class="d-flex flex-column gap-1 navigation-list-engine">
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link active" onclick="executeCategoryFilter('all', this)">All Masterpieces</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executeCategoryFilter('starters', this)">Starters & Hor d'oeuvres</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executeCategoryFilter('mains', this)">Main Course Entrées</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executeCategoryFilter('desserts', this)">Confections & Desserts</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executeCategoryFilter('drinks', this)">Artisanal Refreshments</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 pt-3 border-top" style="border-color: #f3f4f6 !important;">
+                        <h6 class="fw-bold text-dark text-uppercase mb-3" style="font-size: 0.78rem; letter-spacing: 0.08em; color: #6b7280 !important;">Dietary Trait Sorting</h6>
+                        <div class="d-flex flex-column gap-1">
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executePreferenceFilter('all', this)">Complete Baseline View</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executePreferenceFilter('signature', this)">Chef's Choice Premium</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executePreferenceFilter('veg', this)">Pure Vegetarian Line</button>
+                            <button class="btn w-100 text-start py-2 px-3 rounded-3 border-0 sidebar-filter-link text-secondary" onclick="executePreferenceFilter('popular', this)">Most Popular Grid</button>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-light rounded-3 border" style="border-color: #eaeaea !important;">
+                        <span class="small fw-semibold text-dark d-block mb-1" style="font-size: 0.82rem;">Real-time Query Sync</span>
+                        <p class="text-muted mb-0" style="font-size: 0.75rem; line-height: 1.5;">Click dynamic sorting links to filter instant menu data sets index matrix frames without reloading lines.</p>
+                    </div>
+
+                </div>
+            </aside>
+
+            <section class="col-xl-9 col-lg-8">
+                
+    <div class="bg-white p-3 rounded-4 border mb-4 d-flex align-items-center justify-content-between shadow-sm" style="border-color: #eaeaea !important;">
+        <div class="small text-muted ps-2">
+            Displaying <span class="fw-semibold text-dark id-count-variable" id="visibleCatalogMetricCount">11</span> dynamic menu items found inside server catalog parameters.
+        </div>
+        <span class="badge px-3 py-2 bg-light text-dark border rounded-pill" style="font-size: 0.78rem; font-weight: 500;">Currency Notation: BDT (৳)</span>
+    </div>
+
+    <div class="row g-3 g-md-4" id="masterCatalogMenuGrid">
+        
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="starters" data-preference="veg">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-success text-white px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Vegetarian</span>
+                    <img src="photo-4.jpg" alt="Garden Fresh Salad Asset File" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Garden Fresh Salad</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,299</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Crisp seasonal greens, cherry tomatoes, cucumber ribbons with house vinaigrette solutions framework setup.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="mains" data-preference="signature">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-danger text-white px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Chef's Pick</span>
+                    <img src="photo-5.jpg" alt="Signature Wagyu Burger Asset" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Signature Wagyu Burger</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳2,800</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">A4 Wagyu patty, aged cheddar melt core, premium truffle mayo paste brushed inside a soft artisan brioche bun layer.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="mains" data-preference="popular">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Popular</span>
+                    <img src="photo-6.jpg" alt="Truffle Carbonara Framework Image File" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Truffle Carbonara</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳2,250</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Hand-rolled thick traditional spaghetti strand nests, crispy cured guanciale matrix blocks, egg yolk paste cream blend, genuine black truffle shavings.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="mains" data-preference="signature">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-danger text-white px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Chef's Pick</span>
+                    <img src="photo-7.jpg" alt="Prime Ribeye Premium Asset Picture" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Prime Ribeye Steak</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳5,400</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">14 oz high USDA Prime ribeye cut steak frame, herb compound rich butter emulsion coating layer, roasted garlic cloves, fresh seasonal harvest greens.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="starters" data-preference="veg">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-success text-white px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Vegetarian</span>
+                    <img src="photo-18.jpg" alt="French Onion Soup File System" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">French Onion Soup</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,400</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Slow-caramelized sweet onion broth base matrix, toasted crusty baguette crunch base, thick melted Gruyère layer crust encapsulation.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="desserts" data-preference="popular">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Popular</span>
+                    <img src="photo-19.jpg" alt="Crème Brûlée Asset Record" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Crème Brûlée</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,600</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Classic smooth rich vanilla bean custard base pudding layer with a perfectly hard fire-caramelized glass sugar sheet crust topper.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="drinks" data-preference="all">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <img src="photo-20.jpg" alt="Signature Cocktail Frame Asset" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Signature Cocktail</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,600</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">House premium botanical blend spirit, elderflower concentrate solutions, fresh citrus lime zest extract essence, tonic spray.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="mains" data-preference="signature">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-danger text-white px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Chef's Pick</span>
+                    <img src="photo-21.jpg" alt="Pan Seared Duck Breast Asset Model" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Pan-Seared Duck Breast</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳3,800</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Free-range tender duck breast slice cuts, sweet cherry-port complex glaze drizzle reduction, parsnip smooth purée paste base, sweet glazed baby carrots.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="starters" data-preference="popular">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Popular</span>
+                    <img src="photo-22.jpg" alt="Crispy Calamari Loops Asset Representation" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Crisp Coastal Calamari</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,850</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Lightly crusted dynamic sea calamari loop rings, tossed with cracked black pepper flakes and chopped scallion beds, served with rich garlic dynamic aioli pot.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="mains" data-preference="all">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <img src="photo-9.jpg" alt="Atlantic Salmon Cut Asset Picture" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Atlantic Salmon Grills</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳3,200</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Pan-seared crisp skin premium Norwegian ocean salmon fillet blocks, creamy lemon zest caper reduction sauce, sautéed organic farm spinach layers.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="desserts" data-preference="all">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <img src="photo-23.jpg" alt="Premium Matcha Tiramisu Asset Data" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Matcha Velvet Tiramisu</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳1,450</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">Light sponge ladyfinger biscuits layers soaked completely in pure Japanese Uji green matcha concentrate, velvety rich whipped mascarpone cheese matrices.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 menu-item-data-container" data-category="drinks" data-preference="popular">
+            <div class="bg-white rounded-4 shadow-sm border overflow-hidden h-100 d-flex flex-column justify-content-between asset-card-interface" style="border-color: #eaeaea !important;">
+                <div class="position-relative overflow-hidden">
+                    <span class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1.5 fw-medium rounded-bl-3" style="font-size: 0.7rem; letter-spacing: 0.05em; z-index: 2;">Popular</span>
+                    <img src="photo-24.jpg" alt="Artisanal Cold Brew Asset Element File" class="w-100 menu-product-img-element" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2 mb-1.5">
+                            <h6 class="fw-bold text-dark mb-0 item-heading-anchor" style="letter-spacing: -0.01em; font-size: 1.05rem;">Artisanal Cold Latte</h6>
+                            <span class="fw-bold text-dark font-monospace" style="font-size: 0.95rem;">৳750</span>
+                        </div>
+                        <p class="text-muted text-clamp-description mb-0" style="font-size: 0.82rem; line-height: 1.6;">18-hour slow cold extraction process single-origin Ethiopian coffee beans, shaken cold with creamy organic almond dairy lines fluid base.</p>
+                    </div>
+                    <a href="dish-details.html" class="btn btn-info w-100 py-2 rounded-3 text-white border-0 minimalist-card-action-btn text-decoration-none text-center" style="font-size: 0.82rem; transition: all 0.2s;">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+        <nav aria-label="Catalog Inventory Navigation Panel Grid">
+            <ul class="pagination pagination-sm gap-1 border-0">
+                <li class="page-item disabled"><a class="page-link rounded-2 px-3 border py-2 text-muted" href="#" tabindex="-1">Previous</a></li>
+                <li class="page-item active"><a class="page-link rounded-2 px-3 border py-2 bg-info text-white border-info" href="#">1</a></li>
+                <li class="page-item"><a class="page-link rounded-2 px-3 border py-2 text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link rounded-2 px-3 border py-2 text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link rounded-2 px-3 border py-2 text-dark" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+    <footer class="footer-classic text-white pt-5 pb-3" style="background-color: #111827; font-family: 'Poppins', sans-serif;">
+    <div class="container">
+        
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="logo.png" alt="Mama's Kitchen Logo" style="height: 55px; width: auto; object-fit: contain;">
+                    <h4 class="fw-bold text-white mb-0 tracking-wide" style="font-size: 1.5rem;">Mama’s Kitchen</h4>
+                </div>
+                <p class="text-secondary small pe-xl-5" style="line-height: 1.7; color: #9ca3af !important;">
+                    Bringing you the comforting warmth of authentic home-cooked flavors, crafted with premium fresh ingredients and served with love. Where passion meets a memorable dining experience.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Quick Links</h6>
+                <ul class="list-unstyled classic-footer-links mb-0">
+                    <li class="mb-2"><a href="index.html" class="text-decoration-none small">Home</a></li>
+                    <li class="mb-2"><a href="menu.html" class="text-decoration-none small">Our Menu</a></li>
+                    <li class="mb-2"><a href="reservation.html" class="text-decoration-none small">Reservation</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none small">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Opening Hours</h6>
+                <ul class="list-unstyled text-secondary small mb-0" style="line-height: 1.8; color: #9ca3af !important;">
+                    <li class="d-flex justify-content-between mb-1"><span>Monday - Thursday:</span> <span class="text-white">12:00 PM - 10:00 PM</span></li>
+                    <li class="d-flex justify-content-between mb-1"><span>Friday - Saturday:</span> <span class="text-info">11:00 AM - 11:00 PM</span></li>
+                    <li class="d-flex justify-content-between"><span>Sunday:</span> <span class="text-danger">11:00 AM - 09:00 PM</span></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Contact Us</h6>
+                <ul class="list-unstyled text-secondary small mb-0" style="color: #9ca3af !important; line-height: 1.8;">
+                    <li class="mb-2 d-flex align-items-start">
+                        <span class="text-info me-2">📍</span> Benapole, Jashore, Khulna
+                    </li>
+                    <li class="mb-2 d-flex align-items-center">
+                        <span class="text-info me-2">📞</span> +880 1974-526915
+                    </li>
+                    <li class="mb-0 d-flex align-items-center">
+                        <span class="text-info me-2">✉️</span> mdrakibhassan.official@gmail.com
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <hr class="mt-5 mb-4 opacity-10" style="border-color: rgba(255, 255, 255, 0.1);">
+
+        <div class="row align-items-center gy-3">
+            
+            <div class="col-md-5 text-center text-md-start">
+                <div class="d-inline-flex align-items-center text-secondary small" style="color: #9ca3af !important;">
+                    <span class="text-info me-2">🕒</span>
+                    <span id="footerLiveDateTime" class="fw-medium">Loading server time...</span>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center gap-3 classic-social-wrap">
+                    
+                    <a href="#" class="social-icon" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8.051 11.919c-1.625 0-3.133-.192-4.116-.514-.453-.149-.8-.49-.949-.95-.314-.982-.513-2.483-.513-4.105 0-1.623.199-3.123.513-4.105.149-.451.496-.791.949-.95 1.004-.326 2.511-.514 4.116-.514 1.625 0 3.132.188 4.116.514.453.15.8.491.949.95.314.982.513 2.482.513 4.105 0 1.622-.201 3.123-.513 4.105-.149.451-.496.79-.949.95-1.004.322-2.511.514-4.116.514m-.633-6.857v3.944l3.147-1.972z"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="X / Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.6.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center text-md-end">
+                <p class="text-secondary small mb-0" style="color: #9ca3af !important;">
+                    &copy; 2026 <span class="text-white fw-semibold">Mama’s Kitchen</span>. Developed by <span class="text-info fw-medium">Rakib</span>
+                </p>
+            </div>
+            
+        </div>
+
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>

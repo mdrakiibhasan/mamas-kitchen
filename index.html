@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama’s Kitchen</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <header class="bg-dark text-white py-2" style="font-size: 0.9rem;">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <span>Email: mdrakibhassan.official@gmail.com</span>
+            <span class="ms-3">Phone: +880 1974-526915</span>
+        </div>
+        <div>
+            <a href="reservation.html" class="text-white text-decoration-none me-3">Reservation</a>
+            <a href="signup.html" class="text-white text-decoration-none">Singup</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" style="top: 0; z-index: 1020;">
+    <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center" href="index.html" style="position: relative; height: 50px; margin-top: 0; margin-bottom: 0;">
+            <img src="logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain; position: absolute; top: 50%; transform: translateY(-50%); z-index: 1025;">
+            <span class="fw-bold" style="margin-left: 85px; line-height: 1; color: #1a1a1a;">Mama’s Kitchen</span>
+        </a>
+        
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-login-custom" href="login.html">Login</a>
+        </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <img src="photo-1.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(50%);" alt="...">
+      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bottom-0 top-0">
+        <h6 class="text-warning text-uppercase tracking-wider fw-bold mb-2" style="font-size: 0.9rem;">Welcome to Mama's Kitchen</h6>
+        <h1 class="display-4 fw-bold text-white mb-4 text-center" style="max-width: 700px;">AWhere Premium Flavors Meet Culinary Excellence</h1>
+        <div class="d-flex gap-3">
+          <a href="signup.html" class="btn btn-outline-light px-4 py-2 border-2 fw-semibold">Explore Now</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <img src="photo-2.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(50%);" alt="...">
+      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bottom-0 top-0">
+        <h6 class="text-warning text-uppercase tracking-wider fw-bold mb-2" style="font-size: 0.9rem;">Delicious Taste</h6>
+        <h1 class="display-4 fw-bold text-white mb-4 text-center" style="max-width: 700px;">Experience The Real Secret Flavour</h1>
+        <div class="d-flex gap-3">
+          <a href="menu.html" class="btn btn-outline-light px-4 py-2 border-2 fw-semibold">View Menu</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <img src="photo-3.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(50%);" alt="...">
+      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bottom-0 top-0">
+        <h6 class="text-warning text-uppercase tracking-wider fw-bold mb-2" style="font-size: 0.9rem;">Made With Love</h6>
+        <h1 class="display-4 fw-bold text-white mb-4 text-center" style="max-width: 700px;">Fresh Ingredients, Professional Chefs</h1>
+        <div class="d-flex gap-3">
+          <a href="reservation.html" class="btn btn-outline-info px-4 py-2 text-white border-2 fw-semibold">Book a Table</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<section class="py-5 bg-white">
+    <div class="container py-3">
+        <div class="row align-items-center g-5">
+            
+            <div class="col-lg-6">
+                <div class="position-relative p-3">
+                    <div class="position-absolute bg-warning rounded-4 top-0 start-0 w-75 h-75 z-0 opacity-25" style="transform: translate(-15px, -15px);"></div>
+                    <img src="photo-2.jpg" class="img-fluid rounded-4 shadow-md position-relative z-1 w-100" style="height: 380px; object-fit: cover;" alt="Our Restaurant Vibe">
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h6 class="text-info text-uppercase fw-bold tracking-wider mb-2" style="color: #0dcaf0; font-size: 0.9rem;">Our Story</h6>
+                    <h2 class="display-5 fw-bold text-dark mb-4" style="font-family: 'Poppins', sans-serif;">Crafting Perfect Culinary Memories Since 2018</h2>
+                    <p class="text-muted mb-4 lead" style="font-size: 1.05rem;">
+                        Welcome to <span class="fw-semibold text-dark">Mama’s Kitchen</span>, where passion meets flavor. We combine local fresh ingredients with global culinary techniques to create an unforgettable dining experience for your family.
+                    </p>
+                    
+                    <div class="row g-4 mt-2">
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <div class="bg-light text-info p-3 rounded-3 me-3 shadow-sm d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #f8f9fa !important;">
+                                    👨‍🍳
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-dark">Expert Chefs</h6>
+                                    <p class="text-muted small mb-0">Crafted by international professionals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <div class="bg-light text-info p-3 rounded-3 me-3 shadow-sm d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #f8f9fa !important;">
+                                    🌱
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1 text-dark">Fresh Ingredients</h6>
+                                    <p class="text-muted small mb-0">100% Organic & directly from local farms.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <a href="about.html" class="btn btn-dark text-white px-4 py-2.5 rounded-pill fw-semibold shadow-sm text-decoration-none">Learn More About Us &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold" style="font-family: 'Poppins', sans-serif; color: #1a1a1a;">Our Special Dishes</h2>
+        
+        <div class="row g-4"> 
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-4.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Garden Fresh Salad">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-success px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Vegetarian</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Garden Fresh Salad</h5>
+                        <p class="card-text text-muted small flex-grow-1">Crisp seasonal greens, cherry tomatoes, cucumber ribbons with house vinaigrette.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳1,299</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-5.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Signature Wagyu Burger">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-danger px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Chef's Pick</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Signature Wagyu Burger</h5>
+                        <p class="card-text text-muted small flex-grow-1">A4 Wagyu patty, aged cheddar, truffle mayo, artisanal brioche bun.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳2,800</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-6.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Truffle Carbonara">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-warning text-dark px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Popular</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Truffle Carbonara</h5>
+                        <p class="card-text text-muted small flex-grow-1">Hand-rolled spaghetti, guanciale, egg yolk, Parmigiano-Reggiano, black truffle shavings.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳2,250</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-7.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Prime Ribeye Steak">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-dark px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Premium</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Prime Ribeye Steak</h5>
+                        <p class="card-text text-muted small flex-grow-1">14 oz USDA Prime ribeye, herb compound butter, garlic cloves, seasonal greens.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳5,400</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-8.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Grilled Chicken">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-danger px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Spicy</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Peri Peri Grilled Chicken</h5>
+                        <p class="card-text text-muted small flex-grow-1">Flame-grilled half chicken marinated in African bird's eye chili marinade.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳1,850</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-9.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Seafood Paella">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-info text-dark px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Seafood</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Spanish Seafood Paella</h5>
+                        <p class="card-text text-muted small flex-grow-1">Saffron-infused rice loaded with fresh king prawns, calamari, mussels, and peas.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳3,200</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-10.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Four Cheese Pizza">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-warning text-dark px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Classic</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Four Cheese Pizza</h5>
+                        <p class="card-text text-muted small flex-grow-1">Artisanal sourdough crust topped with Mozzarella, Gorgonzola, Parmesan, and Fontina.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳1,650</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden dish-card transition-all">
+                    <div class="overflow-hidden position-relative">
+                        <img src="photo-11.jpg" class="card-img-top dish-img" style="height: 200px; object-fit: cover; transition: transform 0.4s ease;" alt="Lava Cake">
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-secondary px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.75rem;">Dessert</span>
+                    </div>
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">Chocolate Lava Cake</h5>
+                        <p class="card-text text-muted small flex-grow-1">Rich Belgian chocolate cake with a warm, gooey molten chocolate center served hot.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-info" style="font-size: 1.25rem; color: #0dcaf0;">৳750</span>
+                            <a href="dish-details.html" class="btn btn-info text-white px-3 py-2 rounded-pill fw-semibold order-btn transition-all shadow-sm d-inline-flex align-items-center justify-content-center text-decoration-none" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="menu.html" class="btn btn-outline-dark px-5 py-2.5 rounded-pill fw-bold transition-all" style="border-width: 2px;">View Full Menu &rarr;</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Chef Recommendation Section -->
+    <section class="py-5" style="background-color: #fdfaf2; font-family: 'Poppins', sans-serif;"> 
+    <div class="container py-3">
+        <h2 class="text-center mb-5 fw-bold" style="font-family: 'Poppins', sans-serif; color: #1a1a1a;">Chef's Recommendations</h2>
+        
+        <div class="row g-4">
+            
+            <div class="col-12 col-lg-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-0 transition-all chef-recommendation-card">
+                    <div class="row align-items-center h-100 g-4">
+                        <div class="col-12 col-md-5">
+                            <img src="photo-12.jpg" class="img-fluid rounded-4 w-100 chef-fixed-img" alt="Pan-Seared Duck Breast">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <span class="text-info text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Chef Marco's Signature</span>
+                            <h3 class="fw-bold text-dark mt-1 mb-2" style="font-size: 1.35rem;">Pan-Seared Duck Breast</h3>
+                            <p class="text-muted small mb-3">A masterpiece of balance — crispy duck skin over tender magret, served alongside silky parsnip purée.</p>
+                            
+                            <ul class="list-unstyled mb-3 small text-dark fw-semibold">
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Free-range French duck breast</li>
+                                <li class="mb-1"><span class="text-info me-1">✓</span> House-made cherry-port glaze</li>
+                                <li><span class="text-info me-1">✓</span> Organic seasonal vegetables</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold text-info" style="font-size: 1.35rem; color: #0dcaf0;">৳3,800</span>
+                                <a href="dish-details.html" class="btn btn-info text-white px-4 py-2 rounded-3 fw-bold order-btn shadow-sm text-decoration-none d-inline-flex align-items-center justify-content-center" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-0 transition-all chef-recommendation-card">
+                    <div class="row align-items-center h-100 g-4">
+                        <div class="col-12 col-md-5">
+                            <img src="photo-13.jpg" class="img-fluid rounded-4 w-100 chef-fixed-img" alt="Prime Ribeye Steak">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <span class="text-info text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Premium Cut Selection</span>
+                            <h3 class="fw-bold text-dark mt-1 mb-2" style="font-size: 1.35rem;">Prime Ribeye Steak</h3>
+                            <p class="text-muted small mb-3">High grade wagyu marbling cut grilled to absolute charcoal fire perfection with wild mushrooms.</p>
+                            
+                            <ul class="list-unstyled mb-3 small text-dark fw-semibold">
+                                <li class="mb-1"><span class="text-info me-1">✓</span> 14 oz dry-aged premium cut</li>
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Rosemary compound garlic butter</li>
+                                <li><span class="text-info me-1">✓</span> Roasted organic asparagus trimmings</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold text-info" style="font-size: 1.35rem; color: #0dcaf0;">৳5,400</span>
+                                <a href="dish-details.html" class="btn btn-info text-white px-4 py-2 rounded-3 fw-bold order-btn shadow-sm text-decoration-none d-inline-flex align-items-center justify-content-center" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-0 transition-all chef-recommendation-card">
+                    <div class="row align-items-center h-100 g-4">
+                        <div class="col-12 col-md-5">
+                            <img src="photo-14.jpg" class="img-fluid rounded-4 w-100" alt="Grilled Atlantic Salmon">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <span class="text-info text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Fresh Sea Catch</span>
+                            <h3 class="fw-bold text-dark mt-1 mb-2" style="font-size: 1.35rem;">Grilled Atlantic Salmon</h3>
+                            <p class="text-muted small mb-3">Crispy skin Norwegian salmon fillet, glazed with citrus reduction matrix layer dressing sauce.</p>
+                            
+                            <ul class="list-unstyled mb-3 small text-dark fw-semibold">
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Wild caught Atlantic Salmon Fillet</li>
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Infused lemon caper emulsion sauce</li>
+                                <li><span class="text-info me-1">✓</span> Sautéed quinoa baby salad base</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold text-info" style="font-size: 1.35rem; color: #0dcaf0;">৳4,250</span>
+                                <a href="dish-details.html" class="btn btn-info text-white px-4 py-2 rounded-3 fw-bold order-btn shadow-sm text-decoration-none d-inline-flex align-items-center justify-content-center" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-0 transition-all chef-recommendation-card">
+                    <div class="row align-items-center h-100 g-4">
+                        <div class="col-12 col-md-5">
+                            <img src="photo-9.jpg" class="img-fluid rounded-4 w-100 chef-fixed-img" alt="Seafood Paella">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <span class="text-info text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Classic Mediterranean</span>
+                            <h3 class="fw-bold text-dark mt-1 mb-2" style="font-size: 1.35rem;">Spanish Seafood Paella</h3>
+                            <p class="text-muted small mb-3">Authentic saffron rice loaded with large king tiger prawns, calamari rings, and blue mussels.</p>
+                            
+                            <ul class="list-unstyled mb-3 small text-dark fw-semibold">
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Imported Spanish Bomba Rice base</li>
+                                <li class="mb-1"><span class="text-info me-1">✓</span> Fresh locally sourced sea harvests</li>
+                                <li><span class="text-info me-1">✓</span> Real Saffron thread infusion layer</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold text-info" style="font-size: 1.35rem; color: #0dcaf0;">৳3,400</span>
+                                <a href="dish-details.html" class="btn btn-info text-white px-4 py-2 rounded-3 fw-bold order-btn shadow-sm text-decoration-none d-inline-flex align-items-center justify-content-center" style="background-color: #0dcaf0; border: none; font-size: 0.85rem;">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Customer Testimonials -->
+    <section class="py-5" style="background-color: #fdfaf2;"> <div class="container py-3">
+        
+        <div class="text-center mb-5">
+            <h6 class="text-info text-uppercase fw-bold tracking-wider mb-2" style="font-size: 0.85rem; color: #0dcaf0;">Reviews</h6>
+            <h2 class="display-6 fw-bold text-dark" style="font-family: 'Poppins', sans-serif;">What Our Customers Say</h2>
+            <div class="mx-auto mt-2 bg-info rounded" style="width: 60px; height: 3px;"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all testimonial-card bg-white">
+                    <div class="card-body p-0 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3 small">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <p class="text-muted fst-italic mb-4" style="line-height: 1.6; font-size: 0.95rem;">
+                                "Amazing food and great service! The ambiance is absolutely beautiful, and the Wagyu burger was easily the best I've ever had. Highly recommended!"
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mt-3 pt-3 border-top border-light">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="rounded-circle me-3 border border-2 border-info-subtle" style="width: 50px; height: 50px; object-fit: cover;" alt="Customer 1">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-0" style="font-size: 1rem;">Sarah Rahman</h6>
+                                <span class="text-muted small">Local Guide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all testimonial-card bg-white">
+                    <div class="card-body p-0 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3 small">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <p class="text-muted fst-italic mb-4" style="line-height: 1.6; font-size: 0.95rem;">
+                                "A wonderful dining experience! Every dish was a masterpiece of flavor, especially the Truffle Carbonara. The staff treats you like royalty."
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mt-3 pt-3 border-top border-light">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" class="rounded-circle me-3 border border-2 border-info-subtle" style="width: 50px; height: 50px; object-fit: cover;" alt="Customer 2">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-0" style="font-size: 1rem;">Tanvir Ahmed</h6>
+                                <span class="text-muted small">Food Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all testimonial-card bg-white">
+                    <div class="card-body p-0 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3 small">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <p class="text-muted fst-italic mb-4" style="line-height: 1.6; font-size: 0.95rem;">
+                                "The Prime Ribeye Steak was grilled to absolute perfection. From the warm welcoming staff to the desert, everything was flawless!"
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mt-3 pt-3 border-top border-light">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" class="rounded-circle me-3 border border-2 border-info-subtle" style="width: 50px; height: 50px; object-fit: cover;" alt="Customer 3">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-0" style="font-size: 1rem;">Siam Hasan</h6>
+                                <span class="text-muted small">Regular Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Newsletter Subscription -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Subscribe to Our Newsletter</h2>
+            <form class="d-flex justify-content-center">
+                <input type="email" class="form-control w-50 me-2" placeholder="Enter your email">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-classic text-white pt-5 pb-3" style="background-color: #111827; font-family: 'Poppins', sans-serif;">
+    <div class="container">
+        
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="logo.png" alt="Mama's Kitchen Logo" style="height: 55px; width: auto; object-fit: contain;">
+                    <h4 class="fw-bold text-white mb-0 tracking-wide" style="font-size: 1.5rem;">Mama’s Kitchen</h4>
+                </div>
+                <p class="text-secondary small pe-xl-5" style="line-height: 1.7; color: #9ca3af !important;">
+                    Bringing you the comforting warmth of authentic home-cooked flavors, crafted with premium fresh ingredients and served with love. Where passion meets a memorable dining experience.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Quick Links</h6>
+                <ul class="list-unstyled classic-footer-links mb-0">
+                    <li class="mb-2"><a href="index.html" class="text-decoration-none small">Home</a></li>
+                    <li class="mb-2"><a href="menu.html" class="text-decoration-none small">Our Menu</a></li>
+                    <li class="mb-2"><a href="reservation.html" class="text-decoration-none small">Reservation</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none small">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Opening Hours</h6>
+                <ul class="list-unstyled text-secondary small mb-0" style="line-height: 1.8; color: #9ca3af !important;">
+                    <li class="d-flex justify-content-between mb-1"><span>Monday - Thursday:</span> <span class="text-white">12:00 PM - 10:00 PM</span></li>
+                    <li class="d-flex justify-content-between mb-1"><span>Friday - Saturday:</span> <span class="text-info">11:00 AM - 11:00 PM</span></li>
+                    <li class="d-flex justify-content-between"><span>Sunday:</span> <span class="text-danger">11:00 AM - 09:00 PM</span></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <h6 class="text-uppercase fw-bold text-white mb-3 tracking-wider" style="font-size: 0.85rem; color: #f3f4f6;">Contact Us</h6>
+                <ul class="list-unstyled text-secondary small mb-0" style="color: #9ca3af !important; line-height: 1.8;">
+                    <li class="mb-2 d-flex align-items-start">
+                        <span class="text-info me-2">📍</span> Benapole, Jashore, Khulna
+                    </li>
+                    <li class="mb-2 d-flex align-items-center">
+                        <span class="text-info me-2">📞</span> +880 1974-526915
+                    </li>
+                    <li class="mb-0 d-flex align-items-center">
+                        <span class="text-info me-2">✉️</span> mdrakibhassan.official@gmail.com
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <hr class="mt-5 mb-4 opacity-10" style="border-color: rgba(255, 255, 255, 0.1);">
+
+        <div class="row align-items-center gy-3">
+            
+            <div class="col-md-5 text-center text-md-start">
+                <div class="d-inline-flex align-items-center text-secondary small" style="color: #9ca3af !important;">
+                    <span class="text-info me-2">🕒</span>
+                    <span id="footerLiveDateTime" class="fw-medium">Loading server time...</span>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center gap-3 classic-social-wrap">
+                    
+                    <a href="#" class="social-icon" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8.051 11.919c-1.625 0-3.133-.192-4.116-.514-.453-.149-.8-.49-.949-.95-.314-.982-.513-2.483-.513-4.105 0-1.623.199-3.123.513-4.105.149-.451.496-.791.949-.95 1.004-.326 2.511-.514 4.116-.514 1.625 0 3.132.188 4.116.514.453.15.8.491.949.95.314.982.513 2.482.513 4.105 0 1.622-.201 3.123-.513 4.105-.149.451-.496.79-.949.95-1.004.322-2.511.514-4.116.514m-.633-6.857v3.944l3.147-1.972z"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon" title="X / Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.6.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center text-md-end">
+                <p class="text-secondary small mb-0" style="color: #9ca3af !important;">
+                    &copy; 2026 <span class="text-white fw-semibold">Mama’s Kitchen</span>. Developed by <span class="text-info fw-medium">Rakib</span>
+                </p>
+            </div>
+            
+        </div>
+
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>

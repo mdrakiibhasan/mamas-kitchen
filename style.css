@@ -1,0 +1,504 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fffaf0; /* Cream background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #8B0000; /* Dark red */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+    color: #0c0202;
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+    color: #FFA500; /* Orange */
+}
+
+/* Header and Hero Section */
+header {
+    background-color: #8B0000;
+    color: #fff;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    background-color: #8B0000;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+    background-color: #FFA500;
+    transform: scale(1.1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Card Hover & Dynamic Animations */
+.dish-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: #ffffff;
+}
+
+/* Mouse nile card smoothly ektu upore uthbe soft shadow shoho */
+.dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Mouse nile image-ti card-er bhetor halka zoom hobe */
+.dish-card:hover .dish-img {
+    transform: scale(1.06);
+}
+
+/* Order Now Button-e mouse nile button-ti ektu pop-up hobe */
+.order-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.35);
+}
+
+/* --- Classic Professional Footer Styles --- */
+.classic-footer-links a {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+/* Hover-e simple line transition inline shift chara */
+.classic-footer-links a:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Flat minimal social media profiles icons scaling */
+.classic-social-wrap a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+.classic-social-wrap a:hover {
+    color: #0dcaf0 !important;
+    transform: scale(1.15);
+}
+
+/* --- Chef Recommendation Advanced Responsive Structural Tweaks --- */
+.chef-recommendation-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chef-recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Tablet ebong Laptop display standard structure scaling controller */
+@media (min-width: 768px) {
+    .chef-rec-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100% !important;
+    }
+}
+
+/* --- Professional Recommendation Photo Uniform Layout Config --- */
+.chef-fixed-img {
+    height: 230px !important; /* Adjust height based on look preference */
+    object-fit: cover !important; /* Image ke strech/bhenge jaoa theke bachabe */
+    width: 100% !important;
+}
+
+/* Mobile framework alignment control grid line adjustments */
+@media (max-width: 767.98px) {
+    .chef-fixed-img {
+        height: 200px !important; /* Mobile layouts standard sizing uniform scale */
+    }
+}
+
+/* --- Classic Professional Footer Link Animations --- */
+.classic-footer-links a {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.classic-footer-links a:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Icons Structural Setup properties */
+.classic-social-wrap .social-icon {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+/* Hover effect: Smooth scale up dynamic transition with color switch */
+.classic-social-wrap .social-icon:hover {
+    color: #0dcaf0 !important;
+    transform: translateY(-3px);
+}
+
+/* --- Classic Professional Footer Design Mapping --- */
+.classic-footer-links a {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.classic-footer-links a:hover {
+    color: #0dcaf0 !important;
+}
+
+/* SVG Vector icons alignments wrapper profiles */
+.classic-social-wrap .social-icon {
+    color: #9ca3af;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Smooth lift up animation on hover */
+.classic-social-wrap .social-icon:hover {
+    color: #0dcaf0 !important;
+    transform: translateY(-3px);
+}
+
+/* --- Professional About Page Utilities --- */
+.transition-transform {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-transform:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.12em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+/* --- Professional Form Input & Interaction Transitions --- */
+.custom-input-focus:focus {
+    border-color: #0dcaf0 !important; /* Matches bootstrap text-info tone system */
+    box-shadow: 0 0 0 4px rgba(13, 202, 240, 0.15) !important;
+}
+
+.custom-btn-submit:hover {
+    background-color: #0dcaf0 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.tracking-wider {
+    letter-spacing: 0.12em;
+}
+
+/* --- Professional Contact/Form Field Focus Management --- */
+.custom-input-focus:focus {
+    border-color: #0dcaf0 !important; /* Bootstrap text-info layout lock */
+    box-shadow: 0 0 0 4px rgba(13, 202, 240, 0.15) !important;
+}
+
+.custom-btn-submit:hover {
+    background-color: #0dcaf0 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.tracking-wider {
+    letter-spacing: 0.12em;
+}
+
+/* --- High-Contrast Minimalist UI Standard Engine --- */
+.minimal-input-field {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    font-size: 0.92rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+/* Light high-end stroke focus state without default blue bloom glow */
+.minimal-input-field:focus {
+    border-color: #111827 !important; 
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.06) !important;
+}
+
+/* Actions logic transformations tracking */
+.minimal-btn-action:hover {
+    background-color: #1f2937 !important; /* Slight tint lighter gray look */
+    transform: none !important;
+}
+
+.minimal-btn-oauth:hover {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+/* Pure Standard Checkbox tint system */
+.minimal-checkbox-control:checked {
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+}
+
+/* --- High-Contrast Minimalist UI Standard Engine --- */
+.minimal-input-field {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    font-size: 0.92rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.minimal-input-field:focus {
+    border-color: #111827 !important; 
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.06) !important;
+}
+
+.minimal-btn-action:hover {
+    background-color: #1f2937 !important;
+}
+
+.minimal-btn-oauth:hover {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+.minimal-checkbox-control:checked {
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+}
+/* --- Corporate Marketplace Dynamic Catalogue Engine Setup --- */
+
+/* Sidebar Navigation Items Layouts Handling Rules */
+.sidebar-filter-link {
+    font-size: 0.86rem !important;
+    font-weight: 500 !important;
+    background-color: transparent !important;
+    color: #4b5563 !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.sidebar-filter-link:hover {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+.sidebar-filter-link.active {
+    background-color: #0dcaf0 !important; /* Dynamic Sync with Bootstrap Info Cyan Palette */
+    color: #ffffff !important;
+}
+
+/* Master Grid Card Layout Transformations Tracking Parameters */
+.asset-card-interface {
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+}
+
+.asset-card-interface:hover {
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 12px 30px rgba(13, 202, 240, 0.08) !important;
+}
+
+/* Micro Fluid Scale Transition Mechanics for Product Media Images */
+.menu-product-img-element {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.asset-card-interface:hover .menu-product-img-element {
+    transform: scale(1.025);
+}
+
+/* Override Custom Action Button States to maintain match with current theme context */
+.minimalist-card-action-btn {
+    background-color: #0dcaf0 !important; /* Matching standard order now button accents */
+    font-weight: 500 !important;
+}
+
+.minimalist-card-action-btn:hover {
+    background-color: #0bafcf !important;
+    box-shadow: 0 4px 12px rgba(13, 202, 240, 0.2) !important;
+}
+
+/* Rigid Grid Row Balance Alignment Engine */
+.text-clamp-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 40px; /* Forces exact parallel spacing bounds */
+}
+
+/* Standard Pagination Override Profiles */
+.pagination .page-link {
+    background-color: #ffffff;
+    border-color: #eaeaea;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover:not(.bg-info) {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+/* Custom Login Button Master Styling */
+.btn-login-custom {
+    color: #0d6efd; /* Fallback bootstrap primary blue text color */
+    background-color: transparent; /* Empty fill box state */
+    border: 2px solid #0d6efd; /* Solid blue layout border box line */
+    font-weight: 600;
+    padding: 8px 24px;
+    border-radius: 4px; /* Crisp elegant corner edge layout boxes */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease-in-out; /* Smooth duration execution latency */
+}
+
+/* Hover Action Dynamic Control Structure */
+.btn-login-custom:hover {
+    color: #ffffff !important; /* Changes text to white on active target focus */
+    background-color: #0d6efd; /* Solid fill visual context background block */
+    border-color: #0a58ca; /* Darker royal blue boundary frame alignment shift */
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25); /* Glow effect profile */
+    transform: translateY(-1px); /* Slight microscopic lift animation trigger */
+}
+
+/* Optional Active Pressed State Frame Layer */
+.btn-login-custom:active {
+    transform: translateY(1px);
+}
+
+/* --- Dish Details Component Custom Styles --- */
+.breadcrumb-wrapper {
+    background-color: #fcfcfc; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-dish-container {
+    background-color: #fafafa; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.dish-zoom-container {
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: zoom-in;
+    background-color: #fdfdfd;
+}
+
+.dish-zoom-container img {
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.dish-zoom-container:hover img {
+    transform: scale(1.15);
+}
+
+.quantity-selector {
+    max-width: 130px;
+}
+
+.quantity-selector input {
+    font-size: 0.95rem;
+}
+
+.btn-order-now {
+    background-color: #111827; 
+    font-size: 1rem; 
+    transition: background-color 0.2s ease;
+}
+
+.btn-order-now:hover {
+    background-color: #1f2937 !important;
+}
+
+.nav-tabs .nav-link {
+    color: #4b5563;
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 10px 20px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #111827;
+    border-color: #111827;
+    background: none;
+    font-weight: 600;
+}
+
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.table-nutrition-data {
+    font-size: 0.9rem;
+}
+
+.related-dish-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eaeaea !important;
+}
+
+.related-dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08) !important;
+}
+
+.card-media-asset {
+    height: 160px; 
+    object-fit: cover;
+}
+
+.tracking-tight {
+    letter-spacing: -0.02em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.02em;
+}

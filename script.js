@@ -88,7 +88,7 @@ if (signupForm) {
 }
 
 // ==========================================
-// 5. Quantity Increase/Decrease
+// 5. Quantity Increase/Decrease (Global)
 // ==========================================
 const increaseQuantity = document.getElementById('increaseQuantity');
 const decreaseQuantity = document.getElementById('decreaseQuantity');
@@ -96,12 +96,14 @@ const quantityInput = document.getElementById('quantity');
 if (increaseQuantity && decreaseQuantity && quantityInput) {
     increaseQuantity.addEventListener('click', () => {
         let quantity = parseInt(quantityInput.value);
-        quantityInput.value = quantity + 1;
+        if (!isNaN(quantity)) {
+            quantityInput.value = quantity + 1;
+        }
     });
 
     decreaseQuantity.addEventListener('click', () => {
         let quantity = parseInt(quantityInput.value);
-        if (quantity > 1) {
+        if (!isNaN(quantity) && quantity > 1) {
             quantityInput.value = quantity - 1;
         }
     });
@@ -126,7 +128,7 @@ navLinks.forEach(link => {
 });
 
 // ==========================================
-// 7. Professional Footer Live Clock Synchronization
+// 7. Professional Footer Live Clock Synchronization (Fixed Glitch)
 // ==========================================
 function runClassicFooterClock() {
     const timeContainer = document.getElementById('footerLiveDateTime');
@@ -155,7 +157,6 @@ runClassicFooterClock();
 let catalogStateSelectedCategory = 'all';
 let catalogStateSelectedPreference = 'all';
 
-// Live Instant Key-String Typing Listeners Initialization
 const searchInput = document.getElementById('menuLiveSearchQuery');
 if (searchInput) {
     searchInput.addEventListener('input', function(event) {
@@ -164,7 +165,6 @@ if (searchInput) {
     });
 }
 
-// Sidebar Category Links Variable Assignment Switches
 function executeCategoryFilter(categoryValueString, triggeringElement) {
     document.querySelectorAll('.navigation-list-engine .sidebar-filter-link').forEach(button => button.classList.remove('active'));
     if (triggeringElement) triggeringElement.classList.add('active');
@@ -172,17 +172,14 @@ function executeCategoryFilter(categoryValueString, triggeringElement) {
     reprocessCatalogInventoryFiltering();
 }
 
-// Dietary Preferences Link Variable Switches 
 function executePreferenceFilter(preferenceValueString, triggeringElement) {
     catalogStateSelectedPreference = preferenceValueString;
     reprocessCatalogInventoryFiltering();
 }
 
-// Master Logic Filtering Computation Engine Frame Loop
 function reprocessCatalogInventoryFiltering(activeQueryString = '') {
     let executionVisibilityActiveCounter = 0;
     
-    // Safely fallback search detection block
     let currentActiveInputText = activeQueryString;
     const searchElement = document.getElementById('menuLiveSearchQuery');
     if (!currentActiveInputText && searchElement) {
@@ -196,7 +193,6 @@ function reprocessCatalogInventoryFiltering(activeQueryString = '') {
         const extractionHeadingText = headingElement ? headingElement.innerText.toLowerCase() : '';
         const extractionDescriptionText = descElement ? descElement.innerText.toLowerCase() : '';
         
-        // Match check conditions
         const configurationMatchesCategory = (catalogStateSelectedCategory === 'all' || cardWrapperNode.getAttribute('data-category') === catalogStateSelectedCategory);
         const configurationMatchesPreference = (catalogStateSelectedPreference === 'all' || cardWrapperNode.getAttribute('data-preference') === catalogStateSelectedPreference);
         const configurationMatchesSearchText = (!currentActiveInputText || extractionHeadingText.includes(currentActiveInputText) || extractionDescriptionText.includes(currentActiveInputText));
@@ -209,7 +205,6 @@ function reprocessCatalogInventoryFiltering(activeQueryString = '') {
         }
     });
 
-    // Metric update conditional wrapper
     const metricCounterElement = document.getElementById('visibleCatalogMetricCount');
     if (metricCounterElement) {
         metricCounterElement.innerText = executionVisibilityActiveCounter;
@@ -219,26 +214,14 @@ function reprocessCatalogInventoryFiltering(activeQueryString = '') {
 // Ensure DOM content is fully loaded before executing tracking hooks
 document.addEventListener('DOMContentLoaded', function () {
     
-    // 1. Live Footer Server Time/Clock Injection Function (Optional Utility)
-    const footerTimeElement = document.getElementById('footerLiveDateTime');
-    if (footerTimeElement) {
-        function updateLiveClock() {
-            const currentServerDate = new Date();
-            footerTimeElement.innerText = currentServerDate.toLocaleString();
-        }
-        updateLiveClock();
-        setInterval(updateLiveClock, 1000);
-    }
+    // NOTE: Purano duplicated footer clock-ti kete dewa hoyeche conflict thik korar jonno.
 
     // 2. Reservation Form Submit Interception Logic
     const restaurantForm = document.getElementById('restaurantReservationForm');
-    
     if (restaurantForm) {
         restaurantForm.addEventListener('submit', function (event) {
-            // Prevent browser from standard hard page reloading behaviour
             event.preventDefault();
 
-            // Extract real-time inputs values from structural tags layer
             const customerName = document.getElementById('name').value.trim();
             const customerPhone = document.getElementById('phone').value.trim();
             const totalGuestsSelect = document.getElementById('guests');
@@ -247,27 +230,23 @@ document.addEventListener('DOMContentLoaded', function () {
             const totalTimeSelect = document.getElementById('time');
             const selectedTimeText = totalTimeSelect.options[totalTimeSelect.selectedIndex].text;
 
-            // Safe fallback sanity condition verification check
             if (!customerName || !customerPhone || !selectedGuestsText || !selectedDate || !selectedTimeText) {
                 alert('Validation Error: Please fill all configuration variables.');
                 return;
             }
 
-            // Sync structural extracted variables bounds directly into targets Modal placeholder IDs
             document.getElementById('modalName').innerText = customerName;
             document.getElementById('modalPhone').innerText = customerPhone;
             document.getElementById('modalGuests').innerText = selectedGuestsText;
             document.getElementById('modalTime').innerText = selectedTimeText;
             document.getElementById('modalDate').innerText = selectedDate;
 
-            // Fire and display dynamic Bootstrap validation confirmation summary modal trigger popup
             const modalDOMTarget = document.getElementById('reservationSummaryModal');
             if (modalDOMTarget) {
                 const bootstrapPopupEngine = new bootstrap.Modal(modalDOMTarget);
                 bootstrapPopupEngine.show();
             }
 
-            // Reset execution tracking inputs storage fields loop configuration form fields
             restaurantForm.reset();
         });
     }
@@ -277,23 +256,19 @@ document.addEventListener('DOMContentLoaded', function () {
 const contactForm = document.getElementById('restaurantContactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Default Page Reload Stop
+        e.preventDefault();
 
-        // Fetching input parameters dynamically
         const nameVal = document.getElementById('contactName').value;
         const emailVal = document.getElementById('contactEmail').value;
         const subjectVal = document.getElementById('contactSubject').value;
 
-        // Binding values inside the confirmation modal components
         document.getElementById('modalContactName').textContent = nameVal;
         document.getElementById('modalContactEmail').textContent = emailVal;
         document.getElementById('modalContactSubject').textContent = subjectVal;
 
-        // Triggering the Bootstrap Success Modal Layer
         const successModal = new bootstrap.Modal(document.getElementById('contactSuccessModal'));
         successModal.show();
 
-        // Resetting form terminal configuration
         contactForm.reset();
     });
 }
@@ -305,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const qtyInput = document.getElementById('dishQuantity');
 
     if (btnPlus && btnMinus && qtyInput) {
-        // Increment Logic
         btnPlus.addEventListener('click', function () {
             let currentVal = parseInt(qtyInput.value);
             if (!isNaN(currentVal)) {
@@ -313,7 +287,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Decrement Logic
         btnMinus.addEventListener('click', function () {
             let currentVal = parseInt(qtyInput.value);
             if (!isNaN(currentVal) && currentVal > 1) {
